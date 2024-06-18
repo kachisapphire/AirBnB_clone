@@ -13,10 +13,12 @@ class TestBaseModelpy(unittest.TestCase):
         self.assertIsNotNone(base_model.created_at)
         self.assertIsNotNone(base_model.updated_at)
 
-    def test_updated(self):
+    def test_save(self):
         """ test to check the time changes each time it is accessed"""
         base_model = BaseModel()
-        self.assertNotEqual(base_model.updated_at, base_model.save())
+        initial_update = base_model.updated_at
+        new_update = base_model.save()
+        self.assertNotEqual(initial_update, new_update)
 
     def test_dict(self):
         """ test to check function returns a dictionary """
