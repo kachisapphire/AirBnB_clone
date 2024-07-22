@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """ instantiator package"""
 from models.engine.file_storage import FileStorage
 
