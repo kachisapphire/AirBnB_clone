@@ -8,17 +8,17 @@ class TestBaseModelpy(unittest.TestCase):
     """ Test case for BaseModel class. """
     def test_init_py(self):
         """ test case to check for public instance attributes. """
-        base_model = BaseModel()
-        self.assertIsNotNone(base_model.id)
-        self.assertIsNotNone(base_model.created_at)
-        self.assertIsNotNone(base_model.updated_at)
+        my_model = BaseModel()
+        self.assertIsNotNone(my_model.id)
+        self.assertIsNotNone(my_model.created_at)
+        self.assertIsNotNone(my_model.updated_at)
 
     def test_save(self):
         """ test to check the time changes each time it is accessed"""
-        base_model = BaseModel()
-        initial_update = base_model.updated_at
-        new_update = base_model.save()
-        self.assertNotEqual(initial_update, new_update)
+        my_model = BaseModel()
+        initial_updated_at = my_model.updated_at
+        new_update_at = my_model.save()
+        self.assertNotEqual(initial_updated_at, new_update_at)
 
     def test_dict(self):
         """ test to check function returns a dictionary """
